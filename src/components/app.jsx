@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Map from './map';
+import Player from './player';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -55,11 +56,14 @@ export default class App extends Component {
   }
 
   render() {
-    const {playerPosition} = this.state
+    const {playerPosition, isMoving} = this.state
     return (
       <div className="container">
         <Map playerPosition={playerPosition}>
-          Hello World!
+          <Player
+          isMoving={isMoving}
+          direction={playerPosition.direction}
+          />
         </Map>
         <style jsx global>{`
         body {
