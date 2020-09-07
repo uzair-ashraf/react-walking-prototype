@@ -17,6 +17,7 @@ export default class Map extends Component {
         transform: scale(2);
         image-rendering: pixelated;
         background-image: url('${img}');
+        background-color: black;
         background-position: ${`${x}px ${y}px`};
         background-repeat: no-repeat;
         display: flex;
