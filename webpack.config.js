@@ -20,11 +20,21 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             plugins: [
-              '@babel/plugin-transform-react-jsx'
+              '@babel/plugin-transform-react-jsx',
+              'styled-jsx/babel',
+              '@babel/plugin-syntax-optional-chaining'
             ]
           }
         }
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ]
   },
   devtool: 'source-map',
